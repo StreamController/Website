@@ -1,0 +1,10 @@
+.get-started-button:hover,
+.welcome-img:hover,
+.topnav-left:hover,
+.welcome-text:hover,
+.description-header:hover,
+.card:hover,
+.topnav-center:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}

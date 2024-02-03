@@ -1,0 +1,278 @@
+*{
+  transition: transform 0.5s ease
+}
+
+:root {
+  --card-color: rgb(23, 23, 23);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #030013;
+}
+
+div.cursors div{
+  position: absolute;
+  top: 300px;
+  left: 300px;
+  width: 32px;
+  height: 32px;
+  background-color: #f96c73b9;
+  border-radius: 50%;
+  z-index: 10000;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.welcome-img {
+  max-width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+}
+
+.welcome-text {
+  text-align: center;
+  margin-top: 0px;
+  font-family: "Noto Sans", sans-serif;
+  /* font-size: 600%; */
+  font-size: 7vw;
+  color: white;
+  text-shadow: 0 0 30px rgba(157, 96, 212, 0.5);
+}
+
+.welcome-div {
+  margin-top: 10%;
+}
+
+.hovered {
+  transform: scale(1.05); /* Increase the size to 120% of the original */
+  transition: transform 0.3s ease; /* Smooth transition for the scale effect */
+}
+
+.get-started-button {
+  border-radius: 10px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  color: white;
+  box-shadow: 0 0 10px 0 rgba(157, 96, 212, 0.5);
+  border: solid 3px transparent;
+  /* border-color: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, #78e4ff, #ff48fa); */
+  background-color: transparent;
+  /* background-origin: border-box; */
+  /* background-clip: content-box, border-box; */
+  /* box-shadow: 2px 1000px 1px #fff inset; */
+  font-weight: bold;
+}
+
+/* cards */
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 1000px;
+  width: calc(100% - 20px);
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  /* transform: perspective(1000px) rotateX(-90deg); */
+}
+
+#cards.show {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+#cards:hover > .card::after {
+  opacity: 1;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: 260px;
+  flex-direction: column;
+  position: relative;
+  width: 300px;  
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::before,
+.card::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
+}
+
+.card::after {  
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y), 
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+.card > .card-content {
+  background-color: var(--card-color);
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  inset: 1px;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+  padding-top: 30px;
+}
+
+.card-image {
+  max-width: 30%;
+  max-height: auto;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-description {
+  margin-left: 10px;
+  margin-top: 1%;
+}
+
+.card-title {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  margin-bottom: 0px;
+}
+
+.card-text {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/* Nav bar */
+.topnav {
+  position: relative; /* Needed as a reference for the absolute positioning of topnav-center */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  overflow: hidden;
+  padding: 20px 20px;
+}
+
+.topnav-left,
+.topnav-right {
+  display: flex;
+  align-items: center;
+  z-index: 1; /* Ensure these items stack above the center links */
+}
+
+.topnav-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 0; /* Position behind the left and right containers */
+}
+
+.topnav-center a {
+  display: inline-block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav a {
+  font-family: "Roboto Mono", monospace;
+}
+
+.topnav a.active {
+  text-decoration: underline;
+  color: white;
+}
+
+.topnav img {
+  vertical-align: middle;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  color: white;
+  margin: 0;
+  font-size: 150%;
+  font-family: "Roboto Mono", monospace;
+}
+
+.topnav button {
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.empty-area {
+  height: 50%;
+}
+
+.description-header {
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 2.5vw;
+  text-shadow: 0 0 30px rgba(157, 96, 212, 0.5);
+}
+
+.description-div {
+  margin-bottom: 0%;
+}
+
+.stream-deck-link:visited,
+.stream-deck-link:link {
+  color: rgba(157, 96, 212, 1)
+}
+
+
+
+
+/* Responsiveness */
+
+@media (min-width: 1500px) {
+  .welcome-text {
+    font-size: 110px;
+  }
+  .description-header {
+    font-size: 38px;
+  }
+}
