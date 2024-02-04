@@ -1,0 +1,42 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #030013;
+}
+
+body {
+  padding: 5vw;
+}
+
+p{
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 2vw;
+  font-weight: 500;
+  text-shadow: 0 0 30px rgba(157, 96, 212, 0.5);
+}
+
+.top {
+  text-align: center;
+}
+
+.top-img {
+  max-width: 15vw;
+  margin-bottom: 0px;
+  filter: drop-shadow(0 0 20px rgba(157, 96, 212, 0.5));
+}
+
+.top-text {
+  color: white;
+  font-family: "Noto Sans", sans-serif;
+  margin-top: 0px;
+  font-size: 4vw;
+  text-shadow: 0 0 30px rgba(157, 96, 212, 0.5);
+}
+
+.description-div {
+  margin-left: 8vw;
+  margin-right: 8vw;
+  margin-top: 4vw;
+  text-align: center;
+}
