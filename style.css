@@ -263,6 +263,16 @@ div.cursors div{
   color: rgba(157, 96, 212, 1)
 }
 
+.coming-soon {
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  text-align: center;
+  font-size: 3vw;
+  text-shadow: 0 0 30px rgba(157, 96, 212, 0.5);
+}
 
 
 
@@ -276,3 +286,4 @@ div.cursors div{
     font-size: 38px;
   }
 }
+
